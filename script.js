@@ -19,7 +19,7 @@ function displayTodo(){
     todoText.innerText = inputTodo.value;
 
     let todoActions = document.createElement("div");
-    todoActions.classList.add("actioins");
+    todoActions.classList.add("actions");
 
     let checkbox  = document.createElement("input");
     checkbox.setAttribute("type", "checkbox");
@@ -27,9 +27,11 @@ function displayTodo(){
     delBtn.innerText = "Delete";
 
     todoActions.appendChild(checkbox);
-    todoActions.appendChild(todoActions);
+    todoActions.appendChild(delBtn);
+
+    todo.appendChild(todoText);
+    todo.appendChild(todoActions);
 
     todocontainer.appendChild(todo);
-
-    console.log(todoText.innerText);
+    // console.log(todoText.innerText);
 }
