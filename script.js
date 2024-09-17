@@ -4,14 +4,22 @@ const todocontainer = document.querySelector(".container");
 
 //adding tasks everytime button pressed
 addTodo.addEventListener("click", () => {
+
+    if(inputTodo.value.trim() != ""){
     displayTodo()
     inputTodo.value = "";
+    }else{
     //to see the input in "inspect > console"
     // console.log(inputTodo.value);
+    alert("Pleaase enter task!!");
+
+    }
 })
 
 
 function displayTodo(){
+
+    //let declairs variables 
     let todo = document.createElement("div");
     todo.classList.add("todo");
 
@@ -26,6 +34,8 @@ function displayTodo(){
     let delBtn = document.createElement("button");
     delBtn.innerText = "Delete";
 
+
+    //append chicld create new to do tasks in the displayTodo 
     todoActions.appendChild(checkbox);
     todoActions.appendChild(delBtn);
 
