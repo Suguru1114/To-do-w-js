@@ -33,6 +33,11 @@ function displayTodo(){
     checkbox.setAttribute("type", "checkbox");
     let delBtn = document.createElement("button");
     delBtn.innerText = "Delete";
+// if you wanna add more function, start with the button that wants to add the function 
+//then add the .addEventListener
+    delBtn.addEventListener("click", () => {
+        todocontainer.removeChild(todo);
+    })
 
 
     //append chicld create new to do tasks in the displayTodo 
