@@ -1,14 +1,30 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
 
   return (
-    <h1>Todo List React</h1>
+    <main>
 
+    <h1>Todo List</h1>
+    <div className="input-container">
+        <input id="input-todo" type="text" placeholder="" />
+        <button id ="add-todo">+</button>
+    
+     </div> 
+    <div className="container">
+     <div className= "todo"/>
+      <p>Write Python</p>
+      <div className="actions">
+        <input type="checkbox"/>
+        <button>Delete</button>
+      </div>
+
+    </div>
+    </main>
+   
   );
 }
 
 export default App
+ 
