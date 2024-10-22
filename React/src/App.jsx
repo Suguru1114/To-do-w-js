@@ -6,7 +6,7 @@ function App() {
   return (
     <main>
 
-    <h1>Todo List</h1>
+    <h1>Todo List React</h1>
     <div className="input-container">
         <input id="input-todo" type="text" placeholder="" />
         <button id ="add-todo">+</button>
