@@ -5,15 +5,16 @@ function App() {
     const [todos, setTodos] = useState([]);
     const [inputVal, setInputVal] = useState("");
 
-    function writeTodo(e){
-      setInputVal(e.target.value)
-      console.log(inputVal)
+    function writeTodo(e){ 
+      setInputVal(e.target.value);
+      console.log(inputVal);
 
     }
 
   
     function addTodo(){
-      setTodos(prevTodos => [])
+      setTodos(prevTodos => [...prevTodos, inputVal]);
+      console.log(todos);
     }
 
   return (
@@ -31,13 +32,21 @@ function App() {
     
      </div> 
     <div className="container">
-     <div className= "todo"/>
+    
+    {
+      todos.map(todo) => {
+        return (
+          div className= "todo">
       <p>Write Python</p>
       <div className="actions">
         <input type="checkbox"/>
         <button>Delete</button>
       </div>
+        )
+      })
+    }
 
+     <
     </div>
     </main>
    
