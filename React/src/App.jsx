@@ -17,6 +17,8 @@ function App() {
       console.log(todos);
     }
 
+     
+
   return (
     <main>
 
@@ -29,24 +31,20 @@ function App() {
 
         />
         <button onClick={addTodo}>+</button>
-    
-     </div> 
+    </div>
+
     <div className="container">
-    
-    {
-      todos.map(todo) => {
-        return (
-          div className= "todo">
-      <p>Write Python</p>
+    {todos.map((todo, index) => {
+      return(
+          <div className= "todo" key={todo}>
+      <p>{todo}</p>
       <div className="actions">
         <input type="checkbox"/>
-        <button>Delete</button>
+        <button onClick={() => delTodo(index)}>Delete</button>        
+        </div>
       </div>
-        )
-      })
-    }
-
-     <
+        );
+      })}
     </div>
     </main>
    
