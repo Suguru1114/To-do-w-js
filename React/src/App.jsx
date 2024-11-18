@@ -17,7 +17,13 @@ function App() {
       console.log(todos);
     }
 
-     
+     function delTodo(todoIndex) {
+      setTodos((prevTodos) =>
+        prevTodos.filter((prevTodo, prevTodoIndex) => {
+          return prevTodoIndex != todoIndex;
+        })
+      );
+     }
 
   return (
     <main>
