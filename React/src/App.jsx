@@ -13,8 +13,12 @@ function App() {
 
   
     function addTodo(){
+      if (inputVal != ""){
       setTodos(prevTodos => [...prevTodos, inputVal]);
+      setInputVal("")
       console.log(todos);
+
+      }
     }
 
      function delTodo(todoIndex) {
