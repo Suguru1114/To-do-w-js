@@ -16,7 +16,6 @@ function App() {
       if (inputVal != ""){
       setTodos(prevTodos => [...prevTodos, inputVal]);
       setInputVal("")
-      console.log(todos);
 
       }
     }
@@ -37,6 +36,7 @@ function App() {
         <input 
         type="text" 
         placeholder="Enter Todo" 
+        value = {inputVal}
         onChange={writeTodo} 
 
         />
@@ -59,6 +59,22 @@ function App() {
     </main>
    
   );
+}
+
+function InputContainer(){
+  return (
+
+    <div className="input-container">
+        <input 
+        type="text" 
+        placeholder="Enter Todo" 
+        value = {inputVal}
+        onChange={writeTodo} 
+
+        />
+        <button onClick={addTodo}>+</button>
+    </div>
+  )
 }
 
 export default App
