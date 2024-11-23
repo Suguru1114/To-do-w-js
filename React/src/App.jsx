@@ -32,14 +32,20 @@ function App() {
     <main>
 
     <h1>Todo List React</h1>
+
     <InputContainer 
       inputVal={inputVal} 
       writeTodo={writeTodo} 
       addTodo={addTodo}
     ></InputContainer>
 
+    {/* <TodoContainer
+      todos={todos}
+      delTodo={delTodo}
+    >  
+    </TodoContainer> */}
 
-    <div className="container">
+<div className="container">
     {todos.map((todo, index) => {
       return(
           <div className= "todo" key={todo}>
@@ -52,6 +58,7 @@ function App() {
         );
       })}
     </div>
+
     </main>
    
   );
@@ -70,6 +77,25 @@ function InputContainer({inputVal, writeTodo, addTodo}){
         <button onClick={addTodo}>+</button>
     </div>
   );
+}
+
+function TodoContainer({todos, delTodo}){
+  return (
+    <div className="container">
+    {todos.map((todo, index) => {
+      return(
+          <div className= "todo" key={todo}>
+      <p>{todo}</p>
+      <div className="actions">
+        <input type="checkbox"/>
+        <button onClick={() => delTodo(index)}>Delete</button>        
+        </div>
+      </div>
+        );
+      })}
+    </div>
+
+  )
 }
 
 export default App
