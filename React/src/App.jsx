@@ -32,16 +32,12 @@ function App() {
     <main>
 
     <h1>Todo List React</h1>
-    <div className="input-container">
-        <input 
-        type="text" 
-        placeholder="Enter Todo" 
-        value = {inputVal}
-        onChange={writeTodo} 
+    <InputContainer 
+      inputVal={inputVal} 
+      writeTodo={writeTodo} 
+      addTodo={addTodo}
+    ></InputContainer>
 
-        />
-        <button onClick={addTodo}>+</button>
-    </div>
 
     <div className="container">
     {todos.map((todo, index) => {
@@ -61,9 +57,8 @@ function App() {
   );
 }
 
-function InputContainer(){
+function InputContainer({inputVal, writeTodo, addTodo}){
   return (
-
     <div className="input-container">
         <input 
         type="text" 
@@ -74,7 +69,7 @@ function InputContainer(){
         />
         <button onClick={addTodo}>+</button>
     </div>
-  )
+  );
 }
 
 export default App
