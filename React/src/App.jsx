@@ -39,13 +39,13 @@ function App() {
       addTodo={addTodo}
     ></InputContainer>
 
-    {/* <TodoContainer
+    <TodoContainer
       todos={todos}
       delTodo={delTodo}
     >  
-    </TodoContainer> */}
+    </TodoContainer>
 
-<div className="container">
+{/* <div className="container">
     {todos.map((todo, index) => {
       return(
           <div className= "todo" key={todo}>
@@ -57,7 +57,7 @@ function App() {
       </div>
         );
       })}
-    </div>
+    </div> */}
 
     </main>
    
@@ -84,16 +84,23 @@ function TodoContainer({todos, delTodo}){
     <div className="container">
     {todos.map((todo, index) => {
       return(
-          <div className= "todo" key={todo}>
-      <p>{todo}</p>
-      <div className="actions">
-        <input type="checkbox"/>
-        <button onClick={() => delTodo(index)}>Delete</button>        
-        </div>
-      </div>
+          <Todo key={index} todo={todo} index={index} delTodo={delTodo}></Todo>
         );
       })}
     </div>
+
+  )
+}
+
+function Todo({todo, index, delTodo}) {
+  return (
+    <div className= "todo" >
+      <p>{todo}</p>
+        <div className="actions">
+          <input type="checkbox"/>
+          <button onClick={() => delTodo(index)}>Delete</button>        
+        </div>
+      </div>
 
   )
 }
